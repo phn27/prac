@@ -1,0 +1,26 @@
+5 instance
+docker swarm init
+manager:
+docker service create
+ping www.google.com -c 4
+docker service create alpine ping www.google.com
+docker service ls
+docker container ls
+docker node ls
+docker service ls
+docker scale serviceid=5
+docker service ls
+docker serviceid ps
+
+docker service create --replicas 5 alpine ping www.dypiu.ac.in
+docker service ls 
+docker container ls
+docker node ls
+
+docker service rollback serviceid
+docker container ls
+docker swarm leave 
+docker node rm node_id (only for down node)
+$docker node demote leader_id(to remove leader node)
+$docker node promote leader_id (to promote node as a leader again)
+$docker swarm join-token manager (to make worker node as a manager node)
