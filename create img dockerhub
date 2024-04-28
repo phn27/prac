@@ -1,0 +1,20 @@
+create img push dockerhub delete img pull from dockerhub
+
+nano Dockerfile
+FROM ubuntu
+MAINTAINER 20210801014@dypiu.ac.in
+RUN apt-get update
+RUN apt-get install nginx -y
+CMD ["echo","Image created"]
+
+docker build -t name:1.0 .
+create repo on docker hub
+
+docker login
+
+docker images
+docker tag imageid premh27/repo
+docker push premh27/repo
+
+docker rmi --force imageid
+docker pull premh27/repo:latest 
